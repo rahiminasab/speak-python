@@ -10,15 +10,15 @@ carry =  0
 
 for i in range(1, len(l2)+1):
     d = l1[-i] + l2[-i] + carry
-    l3.insert(0, d % 10)
+    l3.append(d % 10)
     carry = d // 10
 
 for i in range(len(l2)+1, len(l1)+1):
     d = l1[-i] + carry
-    l3.insert(0, d % 10)
+    l3.append(d % 10)
     carry = d // 10
 
 if carry > 0:
-    l3.insert(0, carry)
+    l3.append(carry)
 
-print(l3) 
+print(list(reversed(l3)))
